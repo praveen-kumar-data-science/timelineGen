@@ -4,7 +4,7 @@
 
 ## Description
 
-A brief description of the project goes here. Explain what it does and why it's useful.
+The goal of this project is to generate a time of events from any textual content, ordered by the most recent to the oldest events. The information can be collected from any online media from where the data is scrappable. The user can search based on any real-world entity name such as name/place/object and by default, we use Wikipedia data about the entity to collect, store and analyze the events based on the advanced chatGPT API in Python. The user may also provide their own link from where they would like to seek information and generate timelines (but the link should be scrappable). We use the BeautifulSoup library to extract the contents from the link (or Wikipedia page) and then pass them to the ChatGPT API with suitable prompt engineering to generate a timeline of events. Then, we use basic Python nltk packages to clean the results obtained from the chatGPT API, apply feature engineering techniques and present the final table of information on the events. The user can also filter and select the events that they feel are necessary to include in the timeline and also have an opportunity the download the Excel/CSV file containing the events. The timeline visualization is presented in the form of a .html page. 
 
 ## Table of Contents
 
