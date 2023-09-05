@@ -1,4 +1,4 @@
-# Project Name
+# TimelineGPT
 
 [![License](https://img.shields.io/badge/License-GPL-blue.svg)](LICENSE)
 
@@ -33,7 +33,7 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Contact
 
-- [Lloyd Fernandes](https://github.com/lloydf96)
+- [Lloyd Fernandes](https://www.lloydfernandes.com/)
 - [Praveen Kumar Murugaiah](https://github.com/praveen-kumar-data-science)
 - [Raunak Sengupta]
 
