@@ -61,17 +61,17 @@ st.set_page_config(page_title="Timeline Generator",
     })
 
 # Create a connection object for connecting with google sheets
-credentials = service_account.Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"],
-    scopes=scope
-)
-client = gspread.authorize(credentials)
-workbook = client.open("timelineGen")
+# credentials = service_account.Credentials.from_service_account_info(
+#     st.secrets["gcp_service_account"],
+#     scopes=scope
+# )
+# client = gspread.authorize(credentials)
+# workbook = client.open("timelineGen")
 
-#sheets in the google workbook
-feedback_sheet = workbook.worksheet('feedback')
-gpt_sheet = workbook.worksheet('gpt')
-time_sheet = workbook.worksheet('timesheet')
+# #sheets in the google workbook
+# feedback_sheet = workbook.worksheet('feedback')
+# gpt_sheet = workbook.worksheet('gpt')
+# time_sheet = workbook.worksheet('timesheet')
 
 # global variables for different folder paths
 DATA_PATH = os.path.join(os.getcwd(),'data')
@@ -180,7 +180,7 @@ if enter_button:
 
             time_stamp = time.time()
             #save gpt usage data in google sheets. chatgpt_tokens are saved seperately.
-            gpt_sheet.insert_row(['t_'+topic]+gpt_metadata + [st.session_state['chatgpt_tokens']],2)
+            #gpt_sheet.insert_row(['t_'+topic]+gpt_metadata + [st.session_state['chatgpt_tokens']],2)
             st.session_state['chatgpt_tokens'] = 0
             #print(f"Time to save data to google sheets {time.time() - time_stamp}")
             st.session_state['code_time']['google_sheets_load'] = time.time() - time_stamp
@@ -363,7 +363,7 @@ with st.expander("Feedback Form"):
             feedback = [feedback_name,feedback_email,feedback_title,feedback_text] + [todays_date]
 
             #insert the feedback along with the time of submission as a row in the google sheets.
-            feedback_sheet.insert_row(feedback, 2)
+            #feedback_sheet.insert_row(feedback, 2)
 
             #flag displaying successful submission to the user
             st.success("Feedback Submitted. Thank you!" ,icon = "✅")
@@ -382,7 +382,7 @@ if len(gpt_metadata) == 0:
     runtime = todays_date = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
 else:
     runtime = gpt_metadata[5]
-time_sheet.insert_row(['t_'+topic,runtime,timesheet_row],2)   
+#time_sheet.insert_row(['t_'+topic,runtime,timesheet_row],2)   
 
         
     
