@@ -2,7 +2,7 @@
 """summary_functions.py
 
 Created by Lloyd Fernandes, https://github.com/lloydf96?tab=repositories
-and Praveen Kumar Murugaiah, parveen00@gmail.com
+and Praveen Kumar Murugaiah, paarveen00@gmail.com
 
 """
 
